@@ -7,7 +7,9 @@
     --block-color-D-2: #ffd2f0;
     --block-color-E: #8bb6c0;
     --border-color: #8080ff;
-    --border-radius:10px;
+    --border-radius:1rem;
+    /* 默认值是16px */
+    font-size: 10px;
   }
   
   * {
@@ -18,7 +20,7 @@
   
   html {
     /* html的padding指的是div的框 */
-    padding: 10px;
+    padding: 1rem;
     /* html的background-color，也就是在设定颜色的时候，是设定所有，哪怕是不包含div的部分，也设置上颜色。 */
     background-color: #aaa
   }
@@ -26,59 +28,82 @@
   body {
     /* 在html的padding基础上更宽了，因为html和body的padding是重合状态， */
       /* body的padding没设定之前，和html的padding是重合状态。 */
-    padding: 20px;
+    padding: 2rem;
     /* 如果html没设定颜色，这里body设置了颜色，这个颜色同样可以布满整个页面。 */
     /* 整体的话，当然html是老大，如果html设定了颜色，body只能跟随html的颜色；如果html没设定颜色，body的颜色才会布满整个界面。 */
     background-color: #eee;
   }
   
-  .inline-block {
-    display: inline-block;
-  }
-  
   .A {
-    /* display: block; */
-    width: 300px;
-    height: 200px;
+    position: static;
+    width: 20rem;
+    height: 3rem;
     background-color: var(--block-color-A);
   }
   
   .B {
-    position: relative;
-    width: 500px;
-    height: 200px;
+    position: static;
+    width: 60rem;
+    height: 3rem;
     background-color: var(--block-color-B);
-    top: 30px;
-    bottom: 40px;
-    left: 40px;
-    right: 40px;
   }
   
   .C {
-    width: 200px;
-    height: 200px;
+    position: static;
+    width: 20rem;
+    height: calc(20rem + 20rem - 3rem);
+    /* calc主要是给不同单位的数字进行计算 */
     background-color: var(--block-color-C);
+
+  }
+  
+  .D {
+    position: static;
+    width: 60rem;
+    height: calc(20rem + 20rem - 3rem);;
+    background-color: var(--block-color-D);
+  }
+  
+  .E {
+    position: static;
+    width: 81rem;
+    height: 3rem;
+    background-color: var(--block-color-E);
   }
   
   .D {
     position: relative;
-    width: 600px;
-    height: 200px;
+    width: 60rem;
+    height: calc(20rem + 20rem - 3rem);;
     background-color: var(--block-color-D);
-    right: 80px;
-    bottom: 60px;
+    top: 0;
+    left: 0;
   }
-  
-  .E {
-    width: 810px;
-    height: 200px;
-    background-color: var(--block-color-E);
-  }
-  
+
   /* 逗号代表这两个合并的选择 */
   .D-1, 
   .D-2 {
     display: none;
   }
+
+  .D-1 {
+      position: absolute;
+      display: inline-block;
+      margin: 5px;
+      width: 50%;
+      background-color: var(--block-color-D-1);
+      height: 90%;
+  }
+
+  .D-2 {
+    position: absolute;
+    display: inline-block;
+    width: 20%;
+    height: 50%;
+    top: 10%;
+    right: -1rem;
+    background-color: var(--block-color-D-2);
+
+}
   
   

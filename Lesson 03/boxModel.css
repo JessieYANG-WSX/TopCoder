@@ -1,0 +1,32 @@
+:root {
+    --block-color-A: #ebc194;
+    --block-color-B: #c2d08b;
+    --block-color-C: #c2d08b;
+    --block-color-D: #fddd9b;
+    --block-color-D-1: #c3ffdb;
+    --block-color-D-2: #ffd2f0;
+    --block-color-E: #8bb6c0;
+    --border-color: #8080ff;
+    --border-radius:1rem;
+    /* 默认值是16px */
+    font-size: 10px;
+  }
+
+  * {
+      margin: 0;
+      padding: 0;
+      text-decoration: none;
+      list-style: none;
+      border: 2px do var(--border-color);
+  }
+
+  html {
+      padding: 1rem;
+      background-color: #aaa;
+  }
+
+  body {
+      padding: 3rem;
+      background-color: #eee;
+  }
+

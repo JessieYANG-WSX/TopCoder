@@ -32,41 +32,41 @@
     background-color: #eee;
   }
   
-  .inline-block {
-    display: inline-block;
-  }
-  
   .A {
-    /* display: block; */
+    position: relative;
     width: 300px;
     height: 200px;
     background-color: var(--block-color-A);
+    z-index: 999;
   }
   
   .B {
-    position: relative;
+    position: absolute;
     width: 500px;
     height: 200px;
     background-color: var(--block-color-B);
-    top: 30px;
-    bottom: 40px;
-    left: 40px;
-    right: 40px;
+    top: 60px;
+    left: 300px;
+    z-index: 998;
   }
   
   .C {
     width: 200px;
     height: 200px;
     background-color: var(--block-color-C);
+
   }
   
   .D {
-    position: relative;
+    position: absolute;
     width: 600px;
     height: 200px;
     background-color: var(--block-color-D);
-    right: 80px;
-    bottom: 60px;
+    top: 200px;
+    left: 180px;
+    z-index: 997;
+    /* right: 80px;
+    bottom: 60px; */
   }
   
   .E {
