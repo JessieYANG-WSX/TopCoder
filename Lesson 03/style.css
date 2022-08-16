@@ -26,14 +26,50 @@ html {
 body {
   /* 在html的padding基础上更宽了，因为html和body的padding是重合状态， */
     /* body的padding没设定之前，和html的padding是重合状态。 */
-  padding: 100px;
+  padding: 20px;
   /* 如果html没设定颜色，这里body设置了颜色，这个颜色同样可以布满整个页面。 */
   /* 整体的话，当然html是老大，如果html设定了颜色，body只能跟随html的颜色；如果html没设定颜色，body的颜色才会布满整个界面。 */
   background-color: #eee;
 }
 
+.inline-block {
+  display: inline-block;
+}
+
 .A {
+  /* display: block; */
   width: 300px;
   height: 200px;
   background-color: var(--block-color-A);
 }
+
+.B {
+  width: 500px;
+  height: 200px;
+  background-color: var(--block-color-B);
+}
+
+.C {
+  width: 200px;
+  height: 200px;
+  background-color: var(--block-color-C);
+}
+
+.D {
+  width: 600px;
+  height: 200px;
+  background-color: var(--block-color-D);
+}
+
+.E {
+  width: 810px;
+  height: 200px;
+  background-color: var(--block-color-E);
+}
+
+/* 逗号代表这两个合并的选择 */
+.D-1, 
+.D-2 {
+  display: none;
+}
+
