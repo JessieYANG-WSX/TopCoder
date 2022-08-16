@@ -1,0 +1,39 @@
+ :root {
+  --block-color-A: #ebc194;
+  --block-color-B: #c2d08b;
+  --block-color-C: #c2d08b;
+  --block-color-D: #fddd9b;
+  --block-color-D-1: #c3ffdb;
+  --block-color-D-2: #ffd2f0;
+  --block-color-E: #8bb6c0;
+  --border-color: #8080ff;
+  --border-radius:10px;
+}
+
+* {
+  border: 2px solid var(--border-color);
+  /* 这是一个圆角设定。 */
+  border-radius: var(--border-radius);
+}
+
+html {
+  /* html的padding指的是div的框 */
+  padding: 10px;
+  /* html的background-color，也就是在设定颜色的时候，是设定所有，哪怕是不包含div的部分，也设置上颜色。 */
+  background-color: #aaa
+}
+
+body {
+  /* 在html的padding基础上更宽了，因为html和body的padding是重合状态， */
+    /* body的padding没设定之前，和html的padding是重合状态。 */
+  padding: 100px;
+  /* 如果html没设定颜色，这里body设置了颜色，这个颜色同样可以布满整个页面。 */
+  /* 整体的话，当然html是老大，如果html设定了颜色，body只能跟随html的颜色；如果html没设定颜色，body的颜色才会布满整个界面。 */
+  background-color: #eee;
+}
+
+.A {
+  width: 300px;
+  height: 200px;
+  background-color: var(--block-color-A);
+}
