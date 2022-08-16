@@ -37,9 +37,9 @@ header {
 }
 
 ul {
-  /* list-style: none; */
-  /* list-style-type: square; */
-  list-style-image: url("./award-fill.svg");
+  list-style: none; 
+  list-style-type: square;
+  list-style-image: url("./award-fill.svg"); 
 }
 
 ol {
@@ -61,7 +61,7 @@ li {
   background: linear-gradient(to right bottom, white, #b5f5ec 100%);
 }
 
-table {
+/* table {
   width: 650px;
   border: 1px solid;
   border-collapse: collapse;
@@ -79,4 +79,15 @@ td {
 
 thead th {
   text-transform: uppercase;
+} */
+
+table {
+  width: 650px;
+  border: 1px solid;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px ;
+  text-align: center ;
 }
