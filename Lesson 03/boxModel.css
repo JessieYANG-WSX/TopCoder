@@ -30,3 +30,96 @@
       background-color: #eee;
   }
 
+  #innerBox {
+      /* 位置 */
+      /* 默认文档流 */
+      position: static;
+      /* 相对位置布局 */
+      position: relative;
+      /* 绝对位置布局 */
+      position: absolute;  
+      /* 固定视口（viewport）布局 */
+      position: fixed;
+      /* 条件视口（viewport）布局 */
+      position: sticky;
+      /* 火狐或谷歌浏览器不识别sticky时，它会识别-webkit-sticky。
+      两个都写，哪个识别用哪个，两者兼有。
+      -代表兼容态，两者兼有，哪个好用用哪个。
+      除了-webkit-sticky，其他的都是覆盖关系，只有这个是兼容关系。*/
+      position: -webkit-sticky;
+
+      /* 布局 */
+
+      /* 布局-本层 */
+
+      /* 布局-下层 */
+
+      /* 特性 */
+
+      /* 特性-文字 */
+
+      /* 特性-背景 */
+
+      /* margin: 5rem; */
+      /* 布局 */
+      /* div的布局默认是block */
+      display: block;
+      width: 30rem;
+      height: 18rem;
+      border: 2px dotted var(--border-color);
+      background-color: var(--block-color-B);
+
+  }
+  /* 一般情况下，位置是覆盖关系，后者会覆盖前者。 */
+
+  /* 查哪些特效能用，用can I use这个网站查一下：
+  https://caniuse.com/ 
+  中文的更新到18年，不要用了。*/
+
+  #outsideBox {
+      border: 2px dotted var(--border-color);
+
+      /* 位置、布局、特性 */
+      /* 位置 */
+      position: static;
+
+      /* 布局 */
+      /* 盒子布局 - 刚体 - 完全自我支撑 */
+      display: block;
+
+      /* 文字布局 - 流体 - 无法自我支撑 - 文字支撑 */
+      display: inline;
+      /* div（block）可以套span（inline），但是span（inline）不可以套div（block） */
+      /* a作为inline即span，但是它可以套一个div这个block */
+
+      /* 贴合内层 - 对外流体，对内刚体 - 依靠内层的基础上进行支撑 */
+      display: inline-block;
+
+      /* 实质内容到边框距离 */
+      padding: 10rem;
+      padding-left: 3rem;
+      padding-right: 3rem;
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+      /* padding写两个的时候，第一个代表上下，第二个代表左右 */
+      padding: 10rem 0;
+      /* 上、左右、下 */
+      padding: 5rem 3rem 10rem;
+      /* 上、右、下、左，顺时针 */
+      padding: 0, 10rem, 5rem, 1rem;
+
+      /* margin同样道理 */
+      margin: 10rem;
+      margin-left: 3rem;
+      margin-right: 3rem;
+      margin-top: 3rem;
+      margin-bottom: 3rem;
+      /* 写两个的时候，第一个代表上下，第二个代表左右 */
+      margin: 10rem 0;
+      /* 上、左右、下 */
+      margin: 5rem 3rem 10rem;
+      /* 上、右、下、左，顺时针 */
+      margin: 0, 10rem, 5rem, 1rem;
+  }
+
+

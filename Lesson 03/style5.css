@@ -1,0 +1,104 @@
+:root {
+    --block-color-A: #ebc194;
+    --block-color-B: #c2d08b;
+    --block-color-C: #c2d08b;
+    --block-color-D: #fddd9b;
+    --block-color-D-1: #c3ffdb;
+    --block-color-D-2: #ffd2f0;
+    --block-color-E: #8bb6c0;
+    --border-color: #8080ff;
+    --border-radius:1rem;
+    /* 默认值是16px */
+    font-size: 20px;
+  }
+  
+  * {
+    border: 2px solid var(--border-color);
+    /* 这是一个圆角设定。 */
+    border-radius: var(--border-radius);
+  }
+  
+  html {
+    /* html的padding指的是div的框 */
+    padding: 1rem;
+    /* html的background-color，也就是在设定颜色的时候，是设定所有，哪怕是不包含div的部分，也设置上颜色。 */
+    background-color: #aaa
+  }
+  
+  body {
+    /* 在html的padding基础上更宽了，因为html和body的padding是重合状态， */
+      /* body的padding没设定之前，和html的padding是重合状态。 */
+    padding: 2rem;
+    /* 如果html没设定颜色，这里body设置了颜色，这个颜色同样可以布满整个页面。 */
+    /* 整体的话，当然html是老大，如果html设定了颜色，body只能跟随html的颜色；如果html没设定颜色，body的颜色才会布满整个界面。 */
+    background-color: #eee;
+  }
+  
+  .A {
+    position: static;
+    width: 20rem;
+    height: 10rem;
+    background-color: var(--block-color-A);
+  }
+  
+  .B {
+    position: static;
+    width: 60rem;
+    height: 10rem;
+    background-color: var(--block-color-B);
+  }
+  
+  .C {
+    position: sticky;
+    width: 20rem;
+    height: calc(20rem + 20rem - 3rem);
+    /* calc主要是给不同单位的数字进行计算 */
+    background-color: var(--block-color-C);
+    top: 5rem;
+    bottom: 2rem;
+    /* top和bottom冲突时，听从top的；
+    top和bottom不冲突时，可以同时遵守。*/
+    /* 出现冲突，一定是左和上最重要；不冲突时，可以兼容。 */
+  }
+  
+  .E {
+    position: static;
+    width: 81rem;
+    height: 10rem;
+    background-color: var(--block-color-E);
+  }
+  
+  .D {
+    position: fixed;
+    width: 60rem;
+    height: calc(20rem + 20rem - 3rem);;
+    background-color: var(--block-color-D);
+  }
+
+  /* 逗号代表这两个合并的选择 */
+  .D-1, 
+  .D-2 {
+    display: none;
+  }
+
+  .D-1 {
+      position: absolute;
+      display: inline-block;
+      margin: 5px;
+      width: 50%;
+      background-color: var(--block-color-D-1);
+      height: 90%;
+  }
+
+  .D-2 {
+    position: absolute;
+    display: inline-block;
+    width: 20%;
+    height: 50%;
+    top: 10%;
+    right: -1rem;
+    background-color: var(--block-color-D-2);
+
+}
+  
+  
