@@ -1,0 +1,12 @@
+// import { defineConfig } from 'vite';
+
+// export default defineConfig({
+// 	css: {
+// 		//css预处理
+// 		preprocessorOptions: {
+// 			scss: {
+// 				additionalData: '@import "scss/style.scss";'
+// 			}
+// 		}
+// 	}
+// });
