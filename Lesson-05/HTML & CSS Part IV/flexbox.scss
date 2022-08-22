@@ -1,0 +1,207 @@
+:root {
+  --red: #f5222d;
+  --orange: #fa8c16;
+  --gold: #faad14;
+  --lime: #a0d911;
+  --green: #52c41a;
+  --cyan: #13c2c2;
+  --blue: #1890ff;
+  --purple: #722ed1;
+  --magenta: #eb2f96;
+  font-size: 10px;
+  font-family: "PingFang SC", "Microsoft Yahei", monospace;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100vw;
+  height: 100vh;
+}
+
+@mixin border {
+  border: 0.2rem dashed var(--blue);
+}
+
+@mixin font {
+  background-color: var(--cyan);
+  color: white;
+  display: grid;
+  place-items: center;
+}
+
+section#page {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  font-size: 5rem;
+  font-family: "Courier New", Courier, monospace;
+  background-color: var(--cyan);
+  color: white;
+
+  header {
+    display: flex;
+    // flex-wrap: wrap;
+    height: 10rem;
+    // flex-basis: 10rem;
+
+    * {
+      display: grid;
+      place-items: center;
+
+      /* default 默认值 */
+      flex-grow: 0;
+      flex-shrink: 1;
+      flex-basis: auto;
+
+      /* 无单位时 flex-grow: 1; flex-basis: 0; */
+      flex: 1;
+      flex-basis: 10rem;
+
+      /* 有单位时 flex-basis: 10rem; flex-grow: 1; */
+      flex: 10rem;
+
+      /* 两个值，第一个一定是flex-grow 无单位，第二个值如果是无单位则是flex-shrink，有单位则是flex-basis*/
+
+      /* flex-grow flex-shrink */
+      flex: 1 1;
+
+      /* flex-grow flex-basis */
+      flex: 1 10rem;
+
+      /* flex-grow flex-shrink flex-basis */
+      flex: 0 1 auto;
+
+      flex-basis: 10rem;
+
+      border: 0.2rem solid var(--blue);
+    }
+    .box-1 {
+      flex-grow: 1;
+      flex-shrink: 1;
+      background-color: var(--gold);
+    }
+    .box-2 {
+      flex-grow: 2;
+      flex-shrink: 2;
+      background-color: var(--green);
+    }
+    .box-3 {
+      flex-grow: 3;
+      flex-shrink: 3;
+      background-color: var(--magenta);
+    }
+    .box-4 {
+      flex-grow: 4;
+      flex-shrink: 4;
+      background-color: var(--lime);
+    }
+    .box-5 {
+      flex-grow: 5;
+      flex-shrink: 5;
+      background-color: var(--orange);
+    }
+    .box-6 {
+      flex-grow: 6;
+      flex-shrink: 6;
+      background-color: var(--purple);
+    }
+  }
+  main {
+    flex-grow: 1;
+    display: flex;
+    @include border;
+    aside {
+      @include border;
+      background-color: var(--lime);
+      // flex-basis: 20rem;
+      > div {
+        width: 20rem;
+        height: 100%;
+        display: grid;
+        place-items: center;
+      }
+      @media screen and (max-width: 60rem) {
+        > div {
+          width: 15rem;
+          font-size: 4rem;
+        }
+      }
+
+      @media screen and (max-width: 50rem) {
+        > div {
+          width: 12rem;
+          font-size: 3rem;
+        }
+      }
+    }
+    > div {
+      display: grid;
+      place-items: center;
+      @include border;
+      flex-grow: 1;
+    }
+    @media screen and (max-width: 40rem) {
+      flex-direction: column;
+      > aside > div {
+        width: 100%;
+      }
+    }
+  }
+  footer {
+    display: flex;
+    @include border;
+
+    * {
+      @include font;
+      flex: 1;
+    }
+
+    :nth-child(1) {
+      background-color: var(--orange);
+    }
+    :nth-child(2) {
+      background-color: var(--purple);
+    }
+    :nth-child(3) {
+      background-color: var(--red);
+    }
+  }
+}
+
+section#content {
+  width: 90%;
+  min-width: 300px;
+  max-width: 600px;
+  padding: 20px;
+
+  input[type="text"],
+  input[type="password"],
+  select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+  }
+
+  input[type="submit"] {
+    width: 100%;
+    background-color: #4caf50;
+    color: #fff;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+}
