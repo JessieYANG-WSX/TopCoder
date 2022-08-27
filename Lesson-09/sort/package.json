@@ -1,0 +1,8 @@
+{
+    "name": "my-package",
+    "scripts": {
+      "dev": "next dev",
+      "build": "babel src -d lib",
+      "test": "jest"
+    }
+  }
